@@ -1,0 +1,50 @@
+// Color palette
+$color-primary: #225F8E !default;
+$color-secondary: #F48F2D !default;
+$color-black: #222529 !default;
+$color-white: #FFFFFF !default;
+
+$color-background: #F8F7F4 !default;
+$color-border: #DDDCD9 !default;
+$color-shadow: rgba($color-black, 0.22) !default;
+$color-shadow-card: rgba($color-black, 0.1) !default;
+
+$color-text-primary: #61666B !default;
+$color-text-disabled: #9EA2A6 !default;
+$color-text-placeholder: #9EA2A6 !default;
+
+$nav-selected: rgba($color-primary, 0.08) !default;
+
+$color-rating-good: #2FA672 !default;
+$color-rating-good-background: #DCF3E7 !default;
+$color-rating-ok: #BF8C1A !default;
+$color-rating-ok-background: #FFF4DA !default;
+$color-rating-bad: #DB3232 !default;
+$color-rating-bad-background: #FCE0E0 !default;
+$color-rating-empty: #9EA2A6 !default;
+$color-rating-empty-background: #ECECEC !default;
+
+// Breakpoints (min-width, mobile-first)
+$breakpoint-sm: 600px !default;
+$breakpoint-md: 900px !default;
+$breakpoint-lg: 1200px !default;
+$breakpoint-xl: 1536px !default;
+
+// Spacing scale
+$spacing-xs: 4px !default;
+$spacing-sm: 8px !default;
+$spacing-md: 16px !default;
+$spacing-lg: 24px !default;
+$spacing-xl: 32px !default;
+$spacing-xxl: 48px !default;
+
+// Border radius
+$radius-sm: 4px !default;
+$radius-md: 8px !default;
+$radius-lg: 16px !default;
+$radius-full: 9999px !default;
+
+// Font sizes
+$font-size-sm: 0.75rem !default;
+$font-size-md: 1rem !default;
+$font-size-lg: 1.25rem !default;
