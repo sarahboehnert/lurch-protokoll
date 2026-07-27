@@ -27,9 +27,8 @@ jobs:
       - name: Lint
         run: npm run lint --if-present
 
+      - name: Tests
+        run: npm test -- --no-watch --no-progress
+
       - name: Build
         run: npm run build -- --configuration production
-
-# Damit ein fehlgeschlagener Build den Merge tatsächlich verhindert, muss dieser
-# Job zusätzlich in den Branch Protection Rules (Settings > Branches) als
-# "Required status check" für main, development und bugfix eingetragen werden.
