@@ -1,0 +1,55 @@
+name: Manuellen Build erstellen
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versionsnummer'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Version in package.json setzen
+        run: npm version "${{ inputs.version }}" --no-git-tag-version --allow-same-version
+
+      - name: Tests
+        run: npm test -- --no-watch --no-progress
+
+      - name: Build
+        run: npm run build -- --configuration production --base-href /lurch-protokoll/
+
+      - name: dist/ als ZIP packen
+        run: |
+          cd dist
+          # ggf. Pfad an eure tatsächliche Angular-Output-Struktur anpassen
+          # (z.B. dist/fahrstunden-protokoll/browser bei neueren Angular-Versionen)
+          zip -r "../build-${{ inputs.version }}.zip" .
+
+      - name: Test-Build als Pre-Release ablegen
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ inputs.version }}
+          name: "Test-Build ${{ inputs.version }}"
+          body: |
+            Automatisch erstellter Test-Build, Version ${{ inputs.version }}.
+            Branch/Commit: ${{ github.ref_name }} @ ${{ github.sha }}
+          prerelease: true
+          files: build-${{ inputs.version }}.zip
