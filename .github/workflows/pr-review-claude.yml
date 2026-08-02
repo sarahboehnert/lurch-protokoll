@@ -31,8 +31,7 @@ jobs:
             neue Verhalten nicht testen. Achte dabei auf Angular Best Practices , Lesbarkeit, Wartbarkeit und unnötige Komplexität.
             Schreibe PR inline Kommentare auf Deutsch, wenn du zu bestimmten Zeilen etwas konkretes zu sagen hast und einen einzelnen
             Paragraphen als Zusammenfassung in einem Top-Level PR Kommentar.
-
-           claude_args: |
+         claude_args: |
             --model claude-sonnet-4-6
             --max-turns 8
             --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
