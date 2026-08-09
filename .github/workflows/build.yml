@@ -1,15 +1,17 @@
 name: Manuellen Build erstellen
 
+# Manuell auslösbar über Actions-Tab. Baut die App zu einer angegebenen
+# Versionsnummer und legt das Ergebnis als Pre-Release-Asset ab.
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versionsnummer'
+        description: 'Versionsnummer (z.B. 1.4.0)'
         required: true
         type: string
 
 permissions:
-  contents: write
+  contents: write   # zum Anlegen von Tag + Release
 
 jobs:
   build:
@@ -34,14 +36,21 @@ jobs:
         run: npm test -- --no-watch --no-progress
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /lurch-protokoll/
+        run: npm run build -- --configuration production --base-href /Fahrstunden-Protokoll/
 
       - name: dist/ als ZIP packen
         run: |
-          cd dist
-          # ggf. Pfad an eure tatsächliche Angular-Output-Struktur anpassen
-          # (z.B. dist/fahrstunden-protokoll/browser bei neueren Angular-Versionen)
-          zip -r "../build-${{ inputs.version }}.zip" .
+          # Angulars "application"-Builder legt die index.html nicht direkt in dist/,
+          # sondern in dist/<projektname>/browser/. Wir suchen den Ordner mit der
+          # index.html automatisch, statt den Pfad hart zu codieren.
+          BUILD_DIR=$(dirname "$(find dist -maxdepth 3 -name index.html | head -n 1)")
+          if [ -z "$BUILD_DIR" ] || [ "$BUILD_DIR" = "." ]; then
+            echo "Konnte keine index.html unter dist/ finden - Build-Struktur pruefen!"
+            exit 1
+          fi
+          echo "Gefundener Build-Ordner: $BUILD_DIR"
+          cd "$BUILD_DIR"
+          zip -r "$GITHUB_WORKSPACE/build-${{ inputs.version }}.zip" .
 
       - name: Test-Build als Pre-Release ablegen
         uses: softprops/action-gh-release@v2
