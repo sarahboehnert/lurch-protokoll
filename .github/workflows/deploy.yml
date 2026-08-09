@@ -1,0 +1,55 @@
+name: Versionierten Build deployen
+
+# Manuell auslösbar. Nimmt eine bereits mit gebaute
+# Versionsnummer entgegen und deployed genau dieses Artefakt auf GitHub Pages.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Bereits gebaute Versionsnummer (z.B. 1.4.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Release-Asset zur Versionsnummer herunterladen
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download "build-${{ inputs.version }}" \
+            --repo "${{ github.repository }}" \
+            --pattern "build-${{ inputs.version }}.zip" \
+            --output build.zip
+
+      - name: Entpacken
+        run: |
+          mkdir -p dist-deploy
+          unzip build.zip -d dist-deploy
+
+      - name: Pages-Artefakt hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-deploy
+
+      - name: Auf GitHub Pages deployen
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+# Voraussetzung: In den Repo-Settings unter "Pages" muss als Source
+# "GitHub Actions" ausgewählt sein (statt eines Branches).
+# Falls das Release zur angegebenen Version nicht existiert, bricht der
+# "gh release download"-Schritt mit einer klaren Fehlermeldung ab.
