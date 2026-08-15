@@ -1,33 +1,34 @@
-{
-    "schemaVersion": "0.0.1",
-    "kompetenzbereiche": [
-        {
-            "titel": "Verkehrsbeobachtung",
-            "reihenfolge": 0
+import { Bewertungsschema } from "../models/bewertungsschema.model";
+
+export const bewertungsschema = {
+    kompetenzbereiche: {
+        verkehrsbeobachtung: {
+            titel: 'Verkehrsbeobachtung',
+            reihenfolge: 0
         },
-        {
-            "titel": "Fahrzeugpositionierung",
-            "reihenfolge": 1
+        fahrzeugpositionierung: {
+            titel: 'Fahrzeugpositionierung',
+            reihenfolge: 1
         },
-        {
-            "titel": "Geschwindigkeitsanpassung",
-            "reihenfolge": 2
+        geschwindigkeitsanpassung: {
+            titel: 'Geschwindigkeitsanpassung',
+            reihenfolge: 2
         },
-        {
-            "titel": "Kommunikation",
-            "reihenfolge": 3
+        kommunikation: {
+            titel: 'Kommunikation',
+            reihenfolge: 3
         },
-        {
-            "titel": "Fahrzeugbedienung / Umweltbewusste Fahrweise",
-            "reihenfolge": 4
-        }
-    ],
-    "fahraufgaben": [
-        {
-            "titel": "Ein- und Ausfädelungsstreifen, Fahrstreifenwechsel",
-            "reihenfolge": 0,
-            "fehlerbewertung": [],
-            "links": [
+        fahrzeugbedienung: {
+            titel: 'Fahrzeugbedienung / Umweltbewusste Fahrweise',
+            reihenfolge: 4
+        },
+    },
+    fahraufgaben: {
+        einAusfaedelung: {
+            titel: "Ein- und Ausfädelungsstreifen, Fahrstreifenwechsel",
+            reihenfolge: 0,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Einfädelungsstreifen",
                     "url": "https://www.pfep.de/?&c=BE#/dt1/sdt1"
@@ -42,22 +43,22 @@
                 }
             ]
         },
-        {
-            "titel": "Kurve",
-            "reihenfolge": 1,
-            "fehlerbewertung": [],
-            "links": [
+        kurve: {
+            titel: "Kurve",
+            reihenfolge: 1,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Kurve",
                     "url": "https://www.pfep.de/?&c=BE#/dt2/sdt0"
                 }
             ]
         },
-        {
-            "titel": "Vorbeifahren, Überholen",
-            "reihenfolge": 2,
-            "fehlerbewertung": [],
-            "links": [
+        vorbeifahren: {
+            titel: "Vorbeifahren, Überholen",
+            reihenfolge: 2,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Vorbeifahren an Hindernissen und Engstellen",
                     "url": "https://www.pfep.de/?&c=BE#/dt3/sdt1"
@@ -68,11 +69,11 @@
                 }
             ]
         },
-        {
-            "titel": "Kreuzung, Einmündung, Einfahren",
-            "reihenfolge": 3,
-            "fehlerbewertung": [],
-            "links": [
+        kreuzung: {
+            titel: "Kreuzung, Einmündung, Einfahren",
+            reihenfolge: 3,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Überqueren von Kreuzungen und Einmündungen: Rechts vor Links",
                     "url": "https://www.pfep.de/?&c=BE#/dt4/sdt1/1"
@@ -127,22 +128,22 @@
                 }
             ]
         },
-        {
-            "titel": "Kreisverkehr",
-            "reihenfolge": 4,
-            "fehlerbewertung": [],
-            "links": [
+        kreisverkehr: {
+            titel: "Kreisverkehr",
+            reihenfolge: 4,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Kreisverkehr",
                     "url": "https://www.pfep.de/?&c=BE#/dt5/sdt0"
                 }
             ]
         },
-        {
-            "titel": "Schienenverkehr",
-            "reihenfolge": 5,
-            "fehlerbewertung": [],
-            "links": [
+        schienenverkehr: {
+            titel: "Schienenverkehr",
+            reihenfolge: 5,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Heranfahren an und Überqueren von Bahnübergängen",
                     "url": "https://www.pfep.de/?&c=BE#/dt6/sdt1"
@@ -153,11 +154,11 @@
                 }
             ]
         },
-        {
-            "titel": "Haltestelle, Fußgängerüberweg",
-            "reihenfolge": 6,
-            "fehlerbewertung": [],
-            "links": [
+        haltestelle: {
+            titel: "Haltestelle, Fußgängerüberweg",
+            reihenfolge: 6,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Annähern und Vorbeifahren an Haltestellen für Busse/Straßenbahnen",
                     "url": "https://www.pfep.de/?&c=BE#/dt7/sdt1"
@@ -168,23 +169,23 @@
                 }
             ]
         },
-        {
-            "titel": "Geradeausfahren",
-            "reihenfolge": 7,
-            "fehlerbewertung": [],
-            "links": [
+        geradeausfahren: {
+            titel: "Geradeausfahren",
+            reihenfolge: 7,
+            fehlerbewertung: [],
+            links: [
                 {
                     "titel": "Geradeausfahren",
                     "url": "https://www.pfep.de/?&c=BE#/dt8/sdt0"
                 }
             ]
         }
-    ],
-    "grundfahraufgaben": [
-        {
-            "titel": "Fahren nach rechts rückwärts unter Ausnutzung einer Einmündung, Kreuzung oder Einfahrt",
-            "reihenfolge": 0,
-            "fehlerbewertung": [
+    },
+    grundfahraufgaben: {
+        rechtsRueck: {
+            titel: "Fahren nach rechts rückwärts unter Ausnutzung einer Einmündung, Kreuzung oder Einfahrt",
+            reihenfolge: 0,
+            fehlerbewertung: [
                 "Ungenügende Beobachtung des Verkehrs",
                 "Nicht in einem möglichst engen Bogen gefahren",
                 "Nicht beachten des Rechtsfahrgebots",
@@ -192,41 +193,41 @@
                 "Nicht annähernd parallel zum Bordstein oder zur Fahrbahnbegrenzung angehalten",
                 "Endstellung nicht durch Rückwärtsfahrt erreicht",
                 "Mehr als zwei Korrekturzüge"
-            ]
+            ],
         },
-        {
-            "titel": "Einparken Längsaufstellung",
-            "reihenfolge": 1,
-            "fehlerbewertung": [
+        parkenLaengs: {
+            titel: "Einparken Längsaufstellung",
+            reihenfolge: 1,
+            fehlerbewertung: [
                 "Ungenügende Beobachtung des Verkehrs",
                 "Auffahren auf den Bordstein oder Überfahren der Fahrbahnbegrenzung",
                 "Fehlerhafte Endstellung",
                 "Abstand vom Bordstein oder von der Fahrbahnbegrenzung mehr als 30 cm",
                 "Mehr als zwei Korrekturzüge"
-            ]
+            ],
         },
-        {
-            "titel": "Einparken Quer-/ Schrägaufstellung",
-            "reihenfolge": 2,
-            "fehlerbewertung": [
+        parkenQuer: {
+            titel: "Einparken Quer-/ Schrägaufstellung",
+            reihenfolge: 2,
+            fehlerbewertung: [
                 "Ungenügende Beobachtung des Verkehrs",
                 "Nicht ausreichender Seitenabstand",
                 "Fahrzeugumriss ragt über markierte Parkfläche hinaus",
                 "Mehr als zwei Korrekturzüge"
             ]
         },
-        {
-            "titel": "Umkehren",
-            "reihenfolge": 3,
-            "fehlerbewertung": [
+        umkehren: {
+            titel: "Umkehren",
+            reihenfolge: 3,
+            fehlerbewertung: [
                 "Ungenügende Beobachtung des Verkehrs",
                 "Unzulässiges Abweichen vom Rechtsfahrgebot"
             ]
         },
-        {
-            "titel": "Gefahrbremsung",
-            "reihenfolge": 4,
-            "fehlerbewertung": [
+        gefahrbremsung: {
+            titel: "Gefahrbremsung",
+            reihenfolge: 4,
+            fehlerbewertung: [
                 "Zu geringe Ausgangsgeschwindigkeit",
                 "Kein schlagartiges Betätigen der Betriebsbremse",
                 "Nichterreichen der notwendigen Verzögerung",
@@ -234,123 +235,123 @@
                 "Abwürgen des Motors"
             ]
         }
-    ],
-    "fahrtechnischeFragen": [
-        {
-            "titel": "Überprüfung des ordnungsgemäßen Zustandes von:",
-            "reihenfolge": 0,
-            "pruefpunkt": [
-                {
-                    "titel": "Reifen",
-                    "reihenfolge": 0
+    },
+    fahrtechnischeFragen: {
+        zustand: {
+            titel: "Überprüfung des ordnungsgemäßen Zustandes von:",
+            reihenfolge: 0,
+            pruefpunkte: {
+                reifen: {
+                    titel: "Reifen",
+                    reihenfolge: 0
                 }
-            ]
+            }
         },
-        {
-            "titel": "Scheinwerfer, Leuchten, Blinker, Hupe:",
-            "reihenfolge": 1,
-            "pruefpunkt": [
-                {
-                    "titel": "Scheinwerfer, Leuchten, Blinker, Hupe: Ein- und Ausschalten",
-                    "reihenfolge": 0
+        leuchten: {
+            titel: "Scheinwerfer, Leuchten, Blinker, Hupe:",
+            reihenfolge: 1,
+            pruefpunkte: {
+                einAusschalten: {
+                    titel: "Scheinwerfer, Leuchten, Blinker, Hupe: Ein- und Ausschalten",
+                    reihenfolge: 0
                 },
-                {
-                    "titel": "Standlicht prüfen",
-                    "reihenfolge": 1
+                standlicht: {
+                    titel: "Standlicht prüfen",
+                    reihenfolge: 1
                 },
-                {
-                    "titel": "Abblendlicht prüfen",
-                    "reihenfolge": 2
+                abblendlicht: {
+                    titel: "Abblendlicht prüfen",
+                    reihenfolge: 2
                 },
-                {
-                    "titel": "Fernlicht prüfen",
-                    "reihenfolge": 3
+                fernlicht: {
+                    titel: "Fernlicht prüfen",
+                    reihenfolge: 3
                 },
-                {
-                    "titel": "Schlussleuchte(n) mit Kennzeichenbeleuchtung prüfen",
-                    "reihenfolge": 4
+                schlussleuchten: {
+                    titel: "Schlussleuchte(n) mit Kennzeichenbeleuchtung prüfen",
+                    reihenfolge: 4
                 },
-                {
-                    "titel": "Nebelschlussleuchte prüfen",
-                    "reihenfolge": 5
+                nebelschlussleuchte: {
+                    titel: "Nebelschlussleuchte prüfen",
+                    reihenfolge: 5
                 },
-                {
-                    "titel": "Warnblinkanlage prüfen",
-                    "reihenfolge": 6
+                warnblinkanlage: {
+                    titel: "Warnblinkanlage prüfen",
+                    reihenfolge: 6
                 },
-                {
-                    "titel": "Blinker prüfen",
-                    "reihenfolge": 7
+                blinker: {
+                    titel: "Blinker prüfen",
+                    reihenfolge: 7
                 },
-                {
-                    "titel": "Hupe prüfen",
-                    "reihenfolge": 8
+                hupe: {
+                    titel: "Hupe prüfen",
+                    reihenfolge: 8
                 },
-                {
-                    "titel": "Bremsleuchte(n) prüfen",
-                    "reihenfolge": 9
+                bremsleuchten: {
+                    titel: "Bremsleuchten prüfen",
+                    reihenfolge: 9
                 },
-                {
-                    "titel": "Kontrollleuchten benennen",
-                    "reihenfolge": 10
+                kontrollleuchten: {
+                    titel: "Kontrollleuchten benennen",
+                    reihenfolge: 10
                 }
-            ]
+            }
         },
-        {
-            "titel": "Rückstrahler:",
-            "reihenfolge": 2,
-            "pruefpunkt": [
-                {
-                    "titel": "Rückstrahler auf Vorhandensein prüfen",
-                    "reihenfolge": 0
+        rueckstrahler: {
+            titel: "Rückstrahler:",
+            reihenfolge: 2,
+            pruefpunkte: {
+                vorhandensein: {
+                    titel: "Rückstrahler auf Vorhandensein prüfen",
+                    reihenfolge: 0
                 },
-                {
-                    "titel": "Rückstrahler auf Beschädigung prüfen",
-                    "reihenfolge": 1
+                beschaedigung: {
+                    titel: "Rückstrahler auf Beschädigung prüfen",
+                    reihenfolge: 1
                 }
-            ]
+            }
         },
-        {
-            "titel": "Lenkung:",
-            "reihenfolge": 3,
-            "pruefpunkt": [
-                {
-                    "titel": "Lenkschloss entriegeln",
-                    "reihenfolge": 0
+        lenkung: {
+            titel: "Lenkung:",
+            reihenfolge: 3,
+            pruefpunkte: {
+                lenkschloss: {
+                    titel: "Lenkschloss entriegeln",
+                    reihenfolge: 0
                 }
-            ]
+            }
         },
-        {
-            "titel": "Bremsanlage:",
-            "reihenfolge": 4,
-            "pruefpunkt": [
-                {
-                    "titel": "Betriebsbremse auf Funktion prüfen",
-                    "reihenfolge": 0
-                }, 
-                {
-                    "titel": "Feststellbremse auf Funktion prüfen",
-                    "reihenfolge": 1
-                }
-            ]
-        },
-        {
-            "titel": "Flüssigkeitsstände:",
-            "reihenfolge": 5,
-            "pruefpunkt": [
-                {
-                    "titel": "Motoröl",
-                    "reihenfolge": 0
+        bremsanlage: {
+            titel: "Bremsanlage:",
+            reihenfolge: 4,
+            pruefpunkte: {
+                betriebsbremse: {
+                    titel: "Betriebsbremse auf Funktion prüfen",
+                    reihenfolge: 0
                 },
-                {
-                    "titel": "Kühlmittel",
-                    "reihenfolge": 1
-                },
-                {
-                    "titel": "Scheibenwaschflüssigkeit",
-                    "reihenfolge": 3
+                feststellbremse: {
+                    titel: "Feststellbremse auf Funktion prüfen",
+                    reihenfolge: 1
                 }
-            ]
+            }
+        },
+        fluessigkeitsstaende: {
+            titel: "Flüssigkeitsstände:",
+            reihenfolge: 5,
+            pruefpunkte: {
+                motoroel: {
+                    titel: "Motoröl",
+                    reihenfolge: 0
+                },
+                kuehlmittel: {
+                    titel: "Kühlmittel",
+                    reihenfolge: 1
+                },
+                scheibenwaschfluessigkeit: {
+                    titel: "Scheibenwaschflüssigkeit",
+                    reihenfolge: 2
+                }
+            }
         }
-    ]
-}
+    }
+} as const satisfies Bewertungsschema;
