@@ -1,0 +1,31 @@
+@use 'breakpoints' as bp;
+
+// Display & visibility, e.g. `flex`, `md:hidden`, `lg:inline-grid`.
+$display-map: (
+  'block': (
+    display: block,
+  ),
+  'inline-block': (
+    display: inline-block,
+  ),
+  'inline': (
+    display: inline,
+  ),
+  'flex': (
+    display: flex,
+  ),
+  'inline-flex': (
+    display: inline-flex,
+  ),
+  'grid': (
+    display: grid,
+  ),
+  'inline-grid': (
+    display: inline-grid,
+  ),
+  'hidden': (
+    display: none,
+  ),
+);
+
+@include bp.generate-responsive($display-map);

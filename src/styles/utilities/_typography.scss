@@ -1,0 +1,56 @@
+@use 'breakpoints' as bp;
+@use '../variables' as vars;
+
+// Text alignment, size & weight, e.g. `text-center`, `font-semibold`, `md:text-lg`.
+$typography-map: (
+  'text-left': (
+    text-align: left,
+  ),
+  'text-center': (
+    text-align: center,
+  ),
+  'text-right': (
+    text-align: right,
+  ),
+  'text-justify': (
+    text-align: justify,
+  ),
+
+  'text-sm': (
+    font-size: vars.$font-size-sm,
+  ),
+  'text-base': (
+    font-size: vars.$font-size-md,
+  ),
+  'text-lg': (
+    font-size: vars.$font-size-lg,
+  ),
+
+  'font-normal': (
+    font-weight: 400,
+  ),
+  'font-medium': (
+    font-weight: 500,
+  ),
+  'font-semibold': (
+    font-weight: 600,
+  ),
+  'font-bold': (
+    font-weight: 700,
+  ),
+
+  'italic': (
+    font-style: italic,
+  ),
+  'not-italic': (
+    font-style: normal,
+  ),
+
+  'truncate': (
+    overflow: hidden,
+    text-overflow: ellipsis,
+    white-space: nowrap,
+  ),
+);
+
+@include bp.generate-responsive($typography-map);

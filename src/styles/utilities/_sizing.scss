@@ -1,0 +1,66 @@
+@use 'breakpoints' as bp;
+
+// Width & height, e.g. `w-full`, `h-screen`, `md:w-half`.
+$sizing-map: (
+  'w-auto': (
+    width: auto,
+  ),
+  'w-full': (
+    width: 100%,
+  ),
+  'w-screen': (
+    width: 100vw,
+  ),
+  'w-min': (
+    width: min-content,
+  ),
+  'w-max': (
+    width: max-content,
+  ),
+  'w-half': (
+    width: 50%,
+  ),
+  'w-one-third': (
+    width: 33.3333%,
+  ),
+  'w-two-thirds': (
+    width: 66.6667%,
+  ),
+  'w-quarter': (
+    width: 25%,
+  ),
+  'w-three-quarters': (
+    width: 75%,
+  ),
+
+  'h-auto': (
+    height: auto,
+  ),
+  'h-full': (
+    height: 100%,
+  ),
+  'h-screen': (
+    height: 100dvh,
+  ),
+  'h-min': (
+    height: min-content,
+  ),
+  'h-max': (
+    height: max-content,
+  ),
+
+  'min-h-screen': (
+    min-height: 100dvh,
+  ),
+  'min-h-full': (
+    min-height: 100%,
+  ),
+  'max-w-none': (
+    max-width: none,
+  ),
+  'max-w-full': (
+    max-width: 100%,
+  ),
+);
+
+@include bp.generate-responsive($sizing-map);
