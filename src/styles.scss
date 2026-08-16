@@ -6,6 +6,8 @@
 @use '@angular/material' as mat;
 @use './styles/theme-colors' as theme-colors;
 
+@import 'tailwindcss';
+
 html {
   height: 100%;
   @include mat.theme(
