@@ -1,11 +1,12 @@
-import { Fahraufgabe } from "./fahraufgabe.model";
-import { FahrtechnischeFrage } from "./fahrtechnische-frage.model";
-import { Grundfahraufgabe } from "./grundfahraufgabe.model";
-import { Kompetenzbereich } from "./kompetenzbereich.model";
+import { Fahraufgabe } from './fahraufgabe.model';
+import { FahrtechnischeFrage } from './fahrtechnische-frage.model';
+import { Grundfahraufgabe } from './grundfahraufgabe.model';
+import { Kompetenzbereich } from './kompetenzbereich.model';
 
 export interface Bewertungsschema {
-    kompetenzbereiche: Record<string, Kompetenzbereich>;
-    fahraufgaben: Record<string, Fahraufgabe>;
-    grundfahraufgaben: Record<string, Grundfahraufgabe>;
-    fahrtechnischeFragen: Record<string, FahrtechnischeFrage>;
+  version: string;
+  kompetenzbereiche: Record<string, Kompetenzbereich>;
+  fahraufgaben: Record<string, Fahraufgabe>;
+  grundfahraufgaben: Record<string, Grundfahraufgabe>;
+  fahrtechnischeFragen: Record<string, FahrtechnischeFrage>;
 }

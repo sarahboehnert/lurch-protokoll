@@ -1,0 +1,92 @@
+@use 'sass:map';
+@use 'breakpoints' as bp;
+@use '../variables' as vars;
+
+// Text, background & border colors, e.g. `text-primary`, `bg-rating-good`, `md:border-secondary`.
+// Keyed off the project's color palette rather than an arbitrary color scale.
+$color-base: (
+  'primary': vars.$color-primary,
+  'secondary': vars.$color-secondary,
+  'black': vars.$color-black,
+  'white': vars.$color-white,
+);
+
+$color-map: ();
+
+@each $key, $value in $color-base {
+  $color-map: map.merge(
+    $color-map,
+    (
+      'text-#{$key}': (
+          color: $value,
+        ),
+      'bg-#{$key}': (
+          background-color: $value,
+        ),
+      'border-#{$key}': (
+          border-color: $value,
+        ),
+    )
+  );
+}
+
+$color-map: map.merge(
+  $color-map,
+  (
+    'bg-normal': (
+      color: vars.$color-background,
+    ),
+
+    'border-normal': (
+      color: vars.$color-border,
+    ),
+
+    'shadow-normal': (
+      color: vars.$color-shadow,
+    ),
+    'shadow-card': (
+      color: vars.$color-shadow-card,
+    ),
+
+    'text-primary': (
+      color: vars.$color-text-primary,
+    ),
+    'text-disabled': (
+      color: vars.$color-text-disabled,
+    ),
+    'text-placeholder': (
+      color: vars.$color-text-placeholder,
+    ),
+
+    'nav-selected': (
+      color: vars.$nav-selected,
+    ),
+
+    'rating-good': (
+      color: vars.$color-rating-good,
+    ),
+    'bg-rating-good': (
+      color: vars.$color-rating-good-background,
+    ),
+    'rating-ok': (
+      color: vars.$color-rating-ok,
+    ),
+    'bg-rating-ok': (
+      color: vars.$color-rating-ok-background,
+    ),
+    'rating-bad': (
+      color: vars.$color-rating-bad,
+    ),
+    'bg-rating-bad': (
+      color: vars.$color-rating-bad-background,
+    ),
+    'rating-empty': (
+      color: vars.$color-rating-empty,
+    ),
+    'bg-rating-empty': (
+      color: vars.$color-rating-empty-background,
+    ),
+  )
+);
+
+@include bp.generate-responsive($color-map);

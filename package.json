@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\""
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\"",
+    "css:preview": "sass src/styles/_utilities.scss .vscode/utilities-preview.css --no-source-map",
+    "css:preview:watch": "sass --watch src/styles/_utilities.scss .vscode/utilities-preview.css --no-source-map"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +37,7 @@
     "eslint-config-prettier": "10.1.8",
     "jsdom": "29.1.1",
     "prettier": "3.9.5",
+    "sass": "1.99.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.62.1",
     "vitest": "4.1.10"
