@@ -1,4 +1,4 @@
 export interface Pruefpunkt {
-    titel: string;
-    reihenfolge: number;
+  titel: string;
+  reihenfolge: number;
 }
