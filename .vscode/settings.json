@@ -1,4 +1,8 @@
 {
+    // Compiled from src/styles/_utilities.scss via `npm run css:preview` (or the
+    // "css: watch utility class preview" task) so editors can autocomplete the
+    // dynamically generated utility class names (e.g. `text-primary`, `md:flex`).
+    "css.styleSheets": [".vscode/utilities-preview.css"],
     "cSpell.words": [
         "Ausfädelungsstreifen",
         "bemerkungen",

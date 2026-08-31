@@ -37,6 +37,33 @@
           }
         }
       }
+    },
+    {
+      "type": "npm",
+      "script": "css:preview:watch",
+      "label": "css: watch utility class preview",
+      "detail": "Compiles src/styles/_utilities.scss to .vscode/utilities-preview.css so editors can autocomplete utility class names.",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": {
+        "owner": "css",
+        "pattern": {
+          "regexp": "^(.*)$",
+          "file": 1,
+          "location": 1,
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Sass is watching for changes",
+          "endsPattern": "Sass is watching for changes"
+        }
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
