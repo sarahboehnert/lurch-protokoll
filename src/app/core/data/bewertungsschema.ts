@@ -1,6 +1,7 @@
 import { Bewertungsschema } from '../models/bewertungsschema.model';
 
 export const bewertungsschema = {
+  version: '0.1',
   kompetenzbereiche: {
     verkehrsbeobachtung: {
       titel: 'Verkehrsbeobachtung',
