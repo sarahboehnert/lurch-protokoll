@@ -2,6 +2,8 @@
 // Each module below generates its classes unprefixed (mobile-first base) and
 // again per breakpoint, e.g. `flex`, `sm:flex`, `md:flex`, `lg:flex`, `xl:flex`.
 @forward 'utilities/breakpoints';
+@forward 'utilities/colors';
+@forward 'utilities/container';
 @forward 'utilities/display';
 @forward 'utilities/flexbox';
 @forward 'utilities/grid';

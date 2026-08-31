@@ -1,0 +1,38 @@
+@use 'display';
+@use 'spacing';
+
+.container-0 {
+  @extend .flex;
+  @extend .p-0;
+}
+
+.container-xs {
+  @extend .flex;
+  @extend .p-xs;
+}
+
+.container-sm {
+  @extend .flex;
+  @extend .p-sm;
+}
+
+.container-md {
+  @extend .flex;
+  @extend .p-md;
+}
+
+.container-lg {
+  @extend .flex;
+  @extend .p-lg;
+}
+
+.container-xl {
+  @extend .flex;
+  @extend .px-xl;
+  @extend .py-md;
+}
+
+.container-xxl {
+  @extend .flex;
+  @extend .p-xxl;
+}

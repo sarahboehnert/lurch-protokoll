@@ -77,6 +77,13 @@ $spacing-map: ();
       'gap-y-#{$key}': (
           row-gap: $value,
         ),
+
+      'min-height-#{$key}': (
+          min-height: $value,
+        ),
+      'min-width-#{$key}': (
+          min-width: $value,
+        ),
     )
   );
 }
