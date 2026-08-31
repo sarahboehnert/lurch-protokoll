@@ -1,4 +1,3 @@
-import { inject } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
 
 /**
