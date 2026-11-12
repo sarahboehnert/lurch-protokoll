@@ -7,6 +7,15 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Prefer type inference when the type is obvious
 - Avoid the `any` type; use `unknown` when type is uncertain
 
+## Class Members
+
+- Properties and methods must be `private readonly` by default.
+- Widen to `protected readonly` only when the template needs access to them.
+- Never use `public`, unless strictly necessary.
+- Order members as follows: injections first, then signals, then everything else. Within each of these groups, sort from `public` to `private`.
+- Add an explicit type annotation (`: Type`) to a property only when the type is not already unambiguous from its initializer. For example, omit the annotation for `inject(SomeService)` or `input<T>(...)` / `input.required<T>()`, since the type is already stated there. Always annotate method return types explicitly.
+- Interfaces used only within a single class stay private to that file. If an interface is also needed elsewhere, move it into its own file.
+
 ## Angular Best Practices
 
 - Always use standalone components over NgModules
@@ -47,6 +56,18 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Use native control flow (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`, `*ngSwitch`
 - Use the async pipe to handle observables
 - Do not assume globals like (`new Date()`) are available.
+- Order element attributes as:
+  1. `id`
+  2. Standalone, valueless attributes (e.g. `mat-tab-link`, `disableRipple`)
+  3. Plain string attributes: `class` first, then `aria-*` attributes alphabetically, then any other plain attributes
+  4. Property/attribute bindings in square brackets (`[...]`), following the same sub-order as (3) where it applies (`[class...]` first, then `[attr.aria-*]` alphabetically, then the rest)
+  5. Event bindings in parentheses (`(...)`) last
+
+## Styling
+
+- Use responsive, relative sizing units (`rem`) instead of fixed `px` values for CSS sizing.
+- Write CSS mobile-first: author the base (unprefixed) styles for the smallest viewport, then layer on larger breakpoints with `min-width` media queries to progressively enhance.
+- Prefer the project's existing utility classes (`src/styles/utilities`) over inventing custom component classes; apply them directly in the template . Only write custom, component-scoped CSS for what those utilities genuinely cannot express (e.g. a third-party component library's CSS custom-property/token overrides, or a one-off dimension with no matching utility).
 
 ## Services
 
