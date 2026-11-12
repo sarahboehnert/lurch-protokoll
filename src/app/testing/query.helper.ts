@@ -11,22 +11,22 @@ export class TestQuery<T> {
   public constructor(private readonly fixture: ComponentFixture<T>) {}
 
   /** Erstes Element mit der `data-test-id` oder `null`. */
-  query(testId: string): HTMLElement | null {
+  public query(testId: string): HTMLElement | null {
     return this.root.querySelector<HTMLElement>(this.getTestIdSelector(testId));
   }
 
   /** Alle Elemente mit der `data-test-id`. */
-  queryAll(testId: string): HTMLElement[] {
+  public queryAll(testId: string): HTMLElement[] {
     return Array.from(this.root.querySelectorAll<HTMLElement>(this.getTestIdSelector(testId)));
   }
 
   /** `textContent` des Elements oder `''`, wenn nicht vorhanden. */
-  text(testId: string): string {
+  public text(testId: string): string {
     return this.query(testId)?.textContent ?? '';
   }
 
   /** Texte aller passenden Elemente. */
-  texts(testId: string): string[] {
+  public texts(testId: string): string[] {
     return this.queryAll(testId).map((el) => el.textContent ?? '');
   }
 

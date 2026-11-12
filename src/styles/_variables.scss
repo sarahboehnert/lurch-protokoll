@@ -31,17 +31,17 @@ $breakpoint-lg: 1200px !default;
 $breakpoint-xl: 1536px !default;
 
 // Spacing scale
-$spacing-xs: 4px !default;
-$spacing-sm: 8px !default;
-$spacing-md: 16px !default;
-$spacing-lg: 24px !default;
-$spacing-xl: 32px !default;
-$spacing-xxl: 48px !default;
+$spacing-xs: 0.25rem !default;
+$spacing-sm: 0.5rem !default;
+$spacing-md: 1rem !default;
+$spacing-lg: 1.5rem !default;
+$spacing-xl: 2rem !default;
+$spacing-xxl: 3rem !default;
 
 // Border radius
-$radius-sm: 4px !default;
-$radius-md: 8px !default;
-$radius-lg: 16px !default;
+$radius-sm: 0.25rem !default;
+$radius-md: 0.5rem !default;
+$radius-lg: 1rem !default;
 $radius-full: 9999px !default;
 
 // Font sizes

@@ -1,0 +1,30 @@
+<nav
+  mat-tab-nav-bar
+  disableRipple
+  class="app-nav"
+  aria-label="Hauptnavigation"
+  [tabPanel]="tabPanel()"
+>
+  @for (item of navItems; track item.path) {
+    @let locked = item.isLocked();
+
+    <a
+      mat-tab-link
+      routerLinkActive
+      #rla="routerLinkActive"
+      [class.nav-selected]="rla.isActive"
+      [active]="rla.isActive"
+      [attr.data-test-id]="'nav-link-' + (item.path || 'basisdaten')"
+      [disabled]="locked"
+      [routerLink]="item.path"
+      [routerLinkActiveOptions]="{ exact: item.exact }"
+    >
+      {{ item.label }}
+      @if (locked) {
+        <mat-icon class="lock-icon ml-xs text-disabled" aria-hidden="false" aria-label="gesperrt"
+          >lock</mat-icon
+        >
+      }
+    </a>
+  }
+</nav>

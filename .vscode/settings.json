@@ -5,9 +5,11 @@
     "css.styleSheets": [".vscode/utilities-preview.css"],
     "cSpell.words": [
         "Ausfädelungsstreifen",
+        "auswertung",
         "bemerkungen",
         "bewertung",
         "Einfädelungsstreifen",
+        "formular",
         "gefahrbremsung",
         "Gefahrbremsung",
         "geradeausfahren",
@@ -21,6 +23,7 @@
         "Rückwärtsfahren",
         "schueler",
         "tailwindcss",
-        "vorfahrtregelnden"
+        "vorfahrtregelnden",
+        "WCAG"
     ]
 }
