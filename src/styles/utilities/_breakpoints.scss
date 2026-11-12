@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use '../variables' as vars;
+
+// Mobile-first breakpoints (min-width), shared by all utility modules and
+// available for custom component styles via `respond-above()`.
+$breakpoints: (
+  sm: vars.$breakpoint-sm,
+  md: vars.$breakpoint-md,
+  lg: vars.$breakpoint-lg,
+  xl: vars.$breakpoint-xl,
+) !default;
+
+// Wraps `@content` in a min-width media query for the given breakpoint name.
+// Usage: @include bp.respond-above('md') { ... }
+@mixin respond-above($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Renders one rule per utility in $utilities (a map of class-name => map of
+// css-property => value). With $prefix set, the class name is escaped as
+// `prefix\:name` so it can be written as `sm:flex` etc. in markup.
+@mixin render-utilities($utilities, $prefix: null) {
+  @each $name, $decls in $utilities {
+    @if $prefix {
+      .#{$prefix}\:#{$name} {
+        @each $prop, $val in $decls {
+          #{$prop}: $val;
+        }
+      }
+    } @else {
+      .#{$name} {
+        @each $prop, $val in $decls {
+          #{$prop}: $val;
+        }
+      }
+    }
+  }
+}
+
+// Renders a utility map unprefixed, then again behind each breakpoint's
+// min-width media query with a Tailwind-style `sm:` / `md:` / `lg:` / `xl:` prefix.
+@mixin generate-responsive($utilities) {
+  @include render-utilities($utilities);
+
+  @each $name, $width in $breakpoints {
+    @media (min-width: $width) {
+      @include render-utilities($utilities, $name);
+    }
+  }
+}

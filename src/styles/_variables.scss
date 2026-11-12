@@ -1,28 +1,28 @@
 // Color palette
-$color-primary: #225F8E !default;
-$color-secondary: #F48F2D !default;
+$color-primary: #225f8e !default;
+$color-secondary: #f48f2d !default;
 $color-black: #222529 !default;
-$color-white: #FFFFFF !default;
+$color-white: #ffffff !default;
 
-$color-background: #F8F7F4 !default;
-$color-border: #DDDCD9 !default;
+$color-background: #f8f7f4 !default;
+$color-border: #dddcd9 !default;
 $color-shadow: rgba($color-black, 0.22) !default;
 $color-shadow-card: rgba($color-black, 0.1) !default;
 
-$color-text-primary: #61666B !default;
-$color-text-disabled: #9EA2A6 !default;
-$color-text-placeholder: #9EA2A6 !default;
+$color-text-primary: #61666b !default;
+$color-text-disabled: #9ea2a6 !default;
+$color-text-placeholder: #9ea2a6 !default;
 
 $nav-selected: rgba($color-primary, 0.08) !default;
 
-$color-rating-good: #2FA672 !default;
-$color-rating-good-background: #DCF3E7 !default;
-$color-rating-ok: #BF8C1A !default;
-$color-rating-ok-background: #FFF4DA !default;
-$color-rating-bad: #DB3232 !default;
-$color-rating-bad-background: #FCE0E0 !default;
-$color-rating-empty: #9EA2A6 !default;
-$color-rating-empty-background: #ECECEC !default;
+$color-rating-good: #2fa672 !default;
+$color-rating-good-background: #dcf3e7 !default;
+$color-rating-ok: #bf8c1a !default;
+$color-rating-ok-background: #fff4da !default;
+$color-rating-bad: #db3232 !default;
+$color-rating-bad-background: #fce0e0 !default;
+$color-rating-empty: #9ea2a6 !default;
+$color-rating-empty-background: #ececec !default;
 
 // Breakpoints (min-width, mobile-first)
 $breakpoint-sm: 600px !default;

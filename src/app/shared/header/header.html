@@ -1,0 +1,19 @@
+<header>
+  <div class="container-xl justify-between | bg-primary text-white">
+    <div class="flex flex-col">
+      <div class="text-lg">Fahrstunden-Protokoll</div>
+      <div class="container-0 gap-sm | min-height-md | text-sm text-disabled" data-test-id="info">
+        @if (inputData()) {
+          <div>{{ schuelerName() }}</div>
+          <div>•</div>
+          <div>{{ datum() }}</div>
+          <div>•</div>
+          <div>{{ fahrlehrerName() }}</div>
+        }
+      </div>
+    </div>
+    <div class="text-disabled text-sm" data-test-id="bewertungsschema-version">
+      Schema v{{ bewertungsschemaVersion() }}
+    </div>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:string';
+@use 'breakpoints' as bp;
+
+// Grid layout, e.g. `grid-cols-3`, `col-span-2`, `md:grid-cols-4`.
+$grid-columns: 12;
+
+$grid-map: ();
+
+@for $i from 1 through $grid-columns {
+  $grid-map: map.merge(
+    $grid-map,
+    (
+      'grid-cols-#{$i}': (
+          grid-template-columns: string.unquote('repeat(#{$i}, minmax(0, 1fr))'),
+        ),
+    )
+  );
+}
+
+@for $i from 1 through $grid-columns {
+  $grid-map: map.merge(
+    $grid-map,
+    (
+      'col-span-#{$i}': (
+          grid-column: list.slash(string.unquote('span #{$i}'), string.unquote('span #{$i}')),
+        ),
+    )
+  );
+}
+
+$grid-map: map.merge(
+  $grid-map,
+  (
+    'grid-cols-none': (
+      grid-template-columns: none,
+    ),
+    'col-span-full': (
+      grid-column: list.slash(1, -1),
+    ),
+  )
+);
+
+@include bp.generate-responsive($grid-map);

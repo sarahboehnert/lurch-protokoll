@@ -1,4 +1,4 @@
-import { Pruefpunkt } from "./pruefpunkt.model";
+import { Pruefpunkt } from './pruefpunkt.model';
 
 export interface FahrtechnischeFrage {
   titel: string;

@@ -6,7 +6,7 @@ describe('FormularStore', () => {
   let store: InstanceType<typeof FormularStore>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({}); 
+    TestBed.configureTestingModule({});
     store = TestBed.inject(FormularStore);
   });
 
