@@ -34,11 +34,11 @@ $color-map: map.merge(
   $color-map,
   (
     'bg-normal': (
-      color: vars.$color-background,
+      background-color: vars.$color-background,
     ),
 
     'border-normal': (
-      color: vars.$color-border,
+      border-color: vars.$color-border,
     ),
 
     'shadow-normal': (
@@ -59,32 +59,32 @@ $color-map: map.merge(
     ),
 
     'nav-selected': (
-      color: vars.$nav-selected,
+      background-color: vars.$nav-selected,
     ),
 
     'rating-good': (
       color: vars.$color-rating-good,
     ),
     'bg-rating-good': (
-      color: vars.$color-rating-good-background,
+      background-color: vars.$color-rating-good-background,
     ),
     'rating-ok': (
       color: vars.$color-rating-ok,
     ),
     'bg-rating-ok': (
-      color: vars.$color-rating-ok-background,
+      background-color: vars.$color-rating-ok-background,
     ),
     'rating-bad': (
       color: vars.$color-rating-bad,
     ),
     'bg-rating-bad': (
-      color: vars.$color-rating-bad-background,
+      background-color: vars.$color-rating-bad-background,
     ),
     'rating-empty': (
       color: vars.$color-rating-empty,
     ),
     'bg-rating-empty': (
-      color: vars.$color-rating-empty-background,
+      background-color: vars.$color-rating-empty-background,
     ),
   )
 );
