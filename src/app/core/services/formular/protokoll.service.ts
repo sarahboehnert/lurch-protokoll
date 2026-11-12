@@ -5,14 +5,41 @@ import {
   Protokoll,
 } from '../../models/protokoll.model';
 import { Bewertung } from '../../enum/bewertung.enum';
-import { form } from '@angular/forms/signals';
+import { apply, applyEach, FieldTree, form, required, schema } from '@angular/forms/signals';
+
+const kompetenzbereichBewertungSchema = schema<KompetenzbereichBewertung>((path) => {
+  required(path.verkehrsbeobachtung.bewertung, { message: 'Bewertung ist erforderlich' });
+  required(path.fahrzeugpositionierung.bewertung, { message: 'Bewertung ist erforderlich' });
+  required(path.geschwindigkeitsanpassung.bewertung, { message: 'Bewertung ist erforderlich' });
+  required(path.kommunikation.bewertung, { message: 'Bewertung ist erforderlich' });
+  required(path.fahrzeugbedienung.bewertung, { message: 'Bewertung ist erforderlich' });
+});
 
 @Service()
 export class ProtokollService {
   private readonly protokollFormModel = signal<Protokoll>(this.initProtokollModel());
-  private readonly protokollForm = form(this.protokollFormModel);
+  private readonly protokollForm: FieldTree<Protokoll> = form(this.protokollFormModel, (path) => {
+    apply(path.fahraufgaben.einAusfaedelung, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.kurve, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.vorbeifahren, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.kreuzung, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.kreisverkehr, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.schienenverkehr, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.haltestelle, kompetenzbereichBewertungSchema);
+    apply(path.fahraufgaben.geradeausfahren, kompetenzbereichBewertungSchema);
 
-  public getProtokollForm() {
+    apply(path.grundfahraufgaben.rechtsRueck, kompetenzbereichBewertungSchema);
+    apply(path.grundfahraufgaben.parkenLaengs, kompetenzbereichBewertungSchema);
+    apply(path.grundfahraufgaben.parkenQuer, kompetenzbereichBewertungSchema);
+    apply(path.grundfahraufgaben.umkehren, kompetenzbereichBewertungSchema);
+    apply(path.grundfahraufgaben.gefahrbremsung, kompetenzbereichBewertungSchema);
+
+    applyEach(path.fahrtechnischeFragen, (item) => {
+      apply(item.bewertung, kompetenzbereichBewertungSchema);
+    });
+  });
+
+  public getProtokollForm(): FieldTree<Protokoll> {
     return this.protokollForm;
   }
 
