@@ -28,7 +28,10 @@ describe('Header', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the schema version from the BewertungsschemaService', () => {
+  it('should render the schema version from the BewertungsschemaService', async () => {
+    // action
+    await fixture.whenStable();
+
     // expect
     expect(testQuery.text('bewertungsschema-version')).toContain(`Schema v${version}`);
   });
