@@ -1,0 +1,27 @@
+@use '../../../../styles/variables' as vars;
+
+:host {
+  display: block;
+}
+
+.app-nav {
+  background-color: vars.$color-white;
+  border-bottom: 1.5px solid vars.$color-border;
+
+  --mat-tab-container-height: 3.125rem;
+  --mat-tab-active-indicator-height: 3px;
+  --mat-tab-active-indicator-color: #{vars.$color-secondary};
+  --mat-tab-active-label-text-color: #{vars.$color-primary};
+  --mat-tab-active-hover-label-text-color: #{vars.$color-primary};
+  --mat-tab-active-focus-label-text-color: #{vars.$color-primary};
+  --mat-tab-inactive-label-text-color: #{vars.$color-text-disabled};
+  --mat-tab-inactive-hover-label-text-color: #{vars.$color-text-disabled};
+  --mat-tab-inactive-focus-label-text-color: #{vars.$color-text-disabled};
+  --mat-tab-disabled-ripple-color: #{vars.$color-text-disabled};
+}
+
+.lock-icon {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
